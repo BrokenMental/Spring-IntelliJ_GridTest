@@ -10,7 +10,10 @@
     <!-- 500에러가 날 때, "Cannot resolve reference to bean 'cacheManager' while setting bean property 'cacheManager';" 와 같은 에러 문구가 있다면 import를 잘못해서 그러니 다시 해주자.-->
     <mvc:annotation-driven/>
 
-    <mvc:resources mapping="/resources/**" location="/resources/*"/>
+    <mvc:resources mapping="/resources/**" location="/"/>
+
+    <!-- html,js,css 등 RUN 상황에서 로드되지 못하고 404 되어버리는 파일들을 적용 시키는 방법 -->
+    <mvc:default-servlet-handler/>
 
     <!-- 해당 패키지의 모듈(Bean)들을 검색하여 로드하라는 의미 -->
     <context:component-scan base-package="com.setting"/>
