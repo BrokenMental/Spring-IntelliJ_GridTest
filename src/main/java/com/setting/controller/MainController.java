@@ -24,15 +24,14 @@ public class MainController {
     @Inject
     private SettingService service;
 
-    @RequestMapping(value = "/", method = RequestMethod.GET) // 괄호안에 해당하는 경로의 파일들에 아래 메서드를 적용한다.
-    public String list(SettingVO set, Model model, Locale locale) throws Exception{
+    @RequestMapping(value = "/") // 괄호안에 해당하는 경로의 파일들에 아래 메서드를 적용한다.
+    public String list(Model model, Locale locale) throws Exception{
         //logger.debug("debug");
         logger.info("=========================================");
         logger.info("Welcome home! The client locale is {}.", locale);
-        logger.info(set.toString());
         logger.info("=========================================");
 
-        model.addAttribute("list", service.list(set));
+        //model.addAttribute("list", service.list(set));
 
         return "index"; // 컨트롤러 실행시 매핑 위치에 연결되어야 할 파일명 반환
     }
