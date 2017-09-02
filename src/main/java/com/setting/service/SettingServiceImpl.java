@@ -22,7 +22,7 @@ public class SettingServiceImpl implements SettingService{
     private SettingDAO dao;
 
     @Override
-    public List<SettingVO> list(SettingVO set) throws Exception {
-        return dao.list(set);
+    public List<SettingVO> list(SettingVO settingVO) throws Exception {
+        return dao.list(settingVO);
     }
 }

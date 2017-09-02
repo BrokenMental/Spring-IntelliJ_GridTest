@@ -12,8 +12,8 @@
 
     <mvc:resources mapping="/resources/**" location="/"/>
 
-    <!-- html,js,css 등 RUN 상황에서 로드되지 못하고 404 되어버리는 파일들을 적용 시키는 방법 -->
-    <mvc:default-servlet-handler/>
+    <!-- html,js,css 등 RUN 상황에서 로드되지 못하고 404 되어버리는 파일들을 적용 시키는 방법(안먹음) -->
+    <!-- <mvc:default-servlet-handler/> -->
 
     <!-- 해당 패키지의 모듈(Bean)들을 검색하여 로드하라는 의미 -->
     <context:component-scan base-package="com.setting"/>

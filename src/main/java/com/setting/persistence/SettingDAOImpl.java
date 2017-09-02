@@ -24,7 +24,7 @@ public class SettingDAOImpl implements SettingDAO{
     private SqlSession session;
 
     @Override
-    public List<SettingVO> list(SettingVO set) throws Exception {
-        return session.selectList(namespace +".list", set);
+    public List<SettingVO> list(SettingVO settingVO) throws Exception {
+        return session.selectList(namespace +".list", settingVO);
     }
 }

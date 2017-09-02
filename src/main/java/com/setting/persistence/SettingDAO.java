@@ -9,5 +9,5 @@ import java.util.Map;
  * Created by Jinuk on 2017-07-11.
  */
 public interface SettingDAO {
-    List<SettingVO> list(SettingVO set) throws Exception;
+    List<SettingVO> list(SettingVO settingVO) throws Exception;
 }

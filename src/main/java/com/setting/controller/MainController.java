@@ -6,11 +6,13 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.inject.Inject;
-import java.util.Locale;
+import java.util.*;
 
 
 /**
@@ -25,7 +27,7 @@ public class MainController {
     private SettingService service;
 
     @RequestMapping(value = "/") // 괄호안에 해당하는 경로의 파일들에 아래 메서드를 적용한다.
-    public String list(Model model, Locale locale) throws Exception{
+    public String list(Model model, Locale locale, SettingVO settingVO) throws Exception {
         //logger.debug("debug");
         logger.info("=========================================");
         logger.info("Welcome home! The client locale is {}.", locale);
@@ -33,6 +35,7 @@ public class MainController {
 
         //model.addAttribute("list", service.list(set));
 
+        model.addAttribute("list", service.list(settingVO));
         return "index"; // 컨트롤러 실행시 매핑 위치에 연결되어야 할 파일명 반환
     }
 

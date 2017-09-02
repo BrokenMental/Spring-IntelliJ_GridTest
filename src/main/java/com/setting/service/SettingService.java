@@ -10,5 +10,5 @@ import java.util.Map;
  */
 
 public interface SettingService {
-    List<SettingVO> list(SettingVO set) throws Exception;
+    List<SettingVO> list(SettingVO settingVO) throws Exception;
 }
